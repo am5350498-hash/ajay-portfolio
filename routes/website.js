@@ -6,7 +6,7 @@ var util=require('util');
 var conn=mysql.createConnection({
     host:'bxpsavyagjw60qgiboys-mysql.services.clever-cloud.com',
     user:'uymdxyeububzgbo4',
-    password:'uymdxyeububzgbo4',
+    password:'GdDzVXygTiaxfOsQeJy8',
     database:'bxpsavyagjw60qgiboys'
 })
 
