@@ -1,0 +1,39 @@
+<%- include('header.ejs') %>
+
+<div class="page-content">
+<div class="container-fluid">
+
+<h3>Edit Service</h3>
+
+<form action="/admin/service_update" method="post">
+
+    <input type="hidden" name="id" value="<%= service.id %>">
+
+    <label>Service Icon</label>
+    <input type="text"
+           name="service_icon"
+           class="form-control mb-3"
+           value="<%= service.service_icon %>">
+
+    <label>Service Title</label>
+    <input type="text"
+           name="service_title"
+           class="form-control mb-3"
+           value="<%= service.service_title %>">
+
+    <label>Description</label>
+
+    <textarea
+        name="service_description"
+        class="form-control mb-3"><%= service.service_description %></textarea>
+
+    <button class="btn btn-primary">
+        Update
+    </button>
+
+</form>
+
+</div>
+</div>
+
+<%- include('footer.ejs') %>

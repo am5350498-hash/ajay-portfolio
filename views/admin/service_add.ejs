@@ -1,0 +1,23 @@
+<%- include('header.ejs'); %>
+
+<div class="page-content">
+<div class="container-fluid">
+
+    <div class="page-header">
+        <h3>Add Service</h3>
+    </div>
+
+    <form action="/admin/service_add_save" method="post">
+
+        <label>Service Icon</label>
+        <input type="text" name="service_icon" class="form-control mb-3" placeholder="fa-solid fa-code">
+        <label>Service Title</label>
+        <input type="text" name="service_title" class="form-control mb-3">
+        <label>Description</label>
+        <textarea name="service_description" class="form-control mb-3" rows="2"></textarea>
+        <button class="btn btn-primary">Save</button>
+    </form>
+</div>
+</div>
+
+<%- include('footer.ejs'); %>

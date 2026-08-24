@@ -1,0 +1,38 @@
+<%- include('header.ejs') %>
+
+<div class="page-content">
+<div class="container-fluid">
+
+<h3>Add Blog</h3>
+
+<form action="/admin/blog_update_save/<%=blog.id%>/<%=blog.photo %>" method="POST" enctype="multipart/form-data">
+
+<div class="mb-3">
+<label>Blog Image</label>
+<input type="file" name="photo" value="<%=data.photo %>" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Date</label>
+<input type="text" name="post_date" value="<%=data.post_date %>" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Title</label>
+<input type="text" name="post_name" value="<%=data.post_name %>" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Description</label>
+<textarea name="post_discription" value="<%=data.post_discription %>" class="form-control" rows="5"></textarea>
+</div>
+
+
+<button class="btn btn-primary">Save</button>
+
+</form>
+
+</div>
+</div>
+
+<%- include('footer.ejs') %>

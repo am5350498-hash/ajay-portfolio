@@ -1,0 +1,64 @@
+<%- include('header.ejs') %>
+
+<div class="page-content">
+<div class="container-fluid">
+
+<h3>Edit Blog</h3>
+
+<form action="/admin/blog_update" method="POST" enctype="multipart/form-data">
+
+<input type="hidden" name="id" value="<%= blog.id %>">
+<input type="hidden" name="old_photo" value="<%= blog.Image %>">
+
+<div class="mb-3">
+<label>Current Image</label><br>
+
+<img src="/uploads/<%= blog.Image %>" width="150">
+
+</div>
+
+<div class="mb-3">
+<label>New Image</label>
+<input type="file" name="photo" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Date</label>
+<input type="text"
+name="post_date"
+class="form-control"
+value="<%= blog.post_date %>">
+</div>
+
+<div class="mb-3">
+<label>Title</label>
+<input type="text"
+name="post_name"
+class="form-control"
+value="<%= blog.post_name %>">
+</div>
+
+<div class="mb-3">
+<label>Description</label>
+
+<textarea
+name="post_discription"
+class="form-control"
+rows="5"><%= blog.post_discription %></textarea>
+
+</div>
+<div class="mb-3">
+<label>Read More</label>
+<input type="link" name="post_readmore" value="<%= blog.post_readmore %>"  class="form-control" >
+</div>
+
+<button class="btn btn-primary">
+Update Blog
+</button>
+
+</form>
+
+</div>
+</div>
+
+<%- include('footer.ejs') %>

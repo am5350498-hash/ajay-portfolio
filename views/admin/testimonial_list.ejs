@@ -1,0 +1,68 @@
+<%- include('header.ejs'); %>
+
+<!-- ===== DASHBOARD CONTENT ===== -->
+<div class="page-content">
+<div class="container-fluid">
+    <!-- Page Header -->
+    <div class="page-header d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="h3 mb-1">Testimonial List</h1>
+            <p class="text-muted small mb-0">Welcome back, Here's your overview</p>
+        </div>
+        <div>
+            <button class="btn btn-primary">
+                <i class="fas fa-plus me-2"></i>Add New
+            </button>
+        </div>
+    </div>
+
+    <!-- Stat Cards -->
+    <div class="row g-4">
+        <div class="col-12">
+            <table border="1" class="table table-border">
+                <tr>
+                    <th>Id</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                </tr>
+                <% for(var i=0;i<testimonial.length;i++){ %>
+
+<tr>
+
+<td><%= testimonial[i].tid %></td>
+
+<td>
+<img src="/uploads/<%= testimonial[i].image %>" width="80">
+</td>
+
+<td><%= testimonial[i].client_name %></td>
+
+<td><%= testimonial[i].client_position %></td>
+
+<td><%= testimonial[i].testimonial_description %></td>
+
+<td>
+
+<a href="/admin/testimonial_edit/<%= testimonial[i].tid %>" class="btn btn-warning">
+<i class="fa fa-pencil"></i>
+</a>
+
+<a href="/admin/testimonial_delete/<%= testimonial[i].tid %>"
+class="btn btn-danger"
+onclick="return confirm('Delete?')">
+<i class="fa fa-trash"></i>
+</a>
+
+</td>
+
+</tr>
+
+<% } %>
+            </table>
+        </div>
+    </div>
+
+<%- include('footer.ejs'); %>

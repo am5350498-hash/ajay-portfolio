@@ -1,0 +1,51 @@
+<%- include('header.ejs'); %>
+
+<section id="portfolio" class="portfolio">
+    <div class="container">
+
+        <div class="section-header">
+            <span class="section-tag">Portfolio</span>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-desc">A selection of my recent work across various domains</p>
+        </div>
+
+
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+        </div><br><br>
+
+        <div class="section-header">
+        <span class="section-tag">My Achievements</span>
+        <h2 class="section-title">My Certificates</h2>
+        <p class="section-desc">Certificates I have earned during my learning journey</p>
+        </div><br>
+
+        <div class="portfolio-grid">
+
+            <% for(var i=0; i<portfolio.length; i++){ %>
+
+            <div class="portfolio-item" data-category="web">
+
+                <img src="/uploads/<%= portfolio[i].image %>"
+                     alt="<%= portfolio[i].project_name %>">
+
+                <div class="portfolio-overlay">
+                    <h3><%= portfolio[i].project_name %></h3>
+
+                    <p><%= portfolio[i].title %></p>
+
+                    <a href="#" class="portfolio-link">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <% } %>
+
+        </div>
+
+    </div>
+</section>
+
+<%- include('footer.ejs'); %>

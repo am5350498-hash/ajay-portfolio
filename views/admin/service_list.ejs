@@ -1,0 +1,53 @@
+<%- include('header.ejs'); %>
+
+<div class="page-content">
+<div class="container-fluid">
+
+<div class="page-header">
+<h3>Service List</h3>
+</div>
+
+<table class="table table-bordered">
+
+<tr>
+    <th>ID</th>
+    <th>Icon</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Action</th>
+</tr>
+
+<% for(var i=0;i<services.length;i++){ %>
+
+<tr>
+  <td><%= i+1 %></td>
+<td>
+    <i class="<%= services[i].service_icon %>"></i>
+</td>
+<td><%= services[i].service_title %></td>
+
+<td><%= services[i].service_description %></td>
+
+<td>
+
+    <a href="/admin/service_edit/<%= services[i].id %>" class="btn btn-warning">
+        <i class="fa fa-pencil"></i>
+    </a>
+
+    <a href="/admin/service_delete/<%= services[i].id %>"
+       class="btn btn-danger"
+       onclick="return confirm('Delete this service?')">
+        <i class="fa fa-trash"></i>
+    </a>
+
+</td>
+</tr>
+
+<% } %>
+
+</table>
+
+</div>
+</div>
+
+<%- include('footer.ejs'); %>

@@ -1,0 +1,40 @@
+<%- include('header.ejs') %>
+
+<div class="page-content">
+<div class="container-fluid">
+
+<h3>Edit Education</h3>
+
+<form action="/admin/education_update" method="post">
+
+    <input type="hidden" name="id" value="<%= education.eid %>">
+
+    <div class="mb-3">
+        <label>Education Duration</label>
+        <input type="text" name="edu_duration"
+               class="form-control"
+               value="<%= education.edu_duration %>">
+    </div>
+
+    <div class="mb-3">
+        <label>Education Degree</label>
+        <input type="text" name="edu_degree"
+               class="form-control"
+               value="<%= education.edu_degree %>">
+    </div>
+
+    <div class="mb-3">
+        <label>Education University</label>
+        <input type="text" name="edu_university"
+               class="form-control"
+               value="<%= education.edu_university %>">
+    </div>
+
+    <button class="btn btn-primary">Update</button>
+
+</form>
+
+</div>
+</div>
+
+<%- include('footer.ejs') %>

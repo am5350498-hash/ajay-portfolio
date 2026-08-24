@@ -1,0 +1,57 @@
+<%- include('header.ejs'); %>
+
+<!-- ===== DASHBOARD CONTENT ===== -->
+<div class="page-content">
+<div class="container-fluid">
+    <!-- Page Header -->
+    <div class="page-header d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="h3 mb-1">Experience List</h1>
+            <p class="text-muted small mb-0">Welcome back, Here's your overview</p>
+        </div>
+        <div>
+            <button class="btn btn-primary">
+                <i class="fas fa-plus me-2"></i>Add New
+            </button>
+        </div>
+    </div>
+
+    <!-- Stat Cards -->
+    <div class="row g-4">
+        <div class="col-12">
+            <table border="1" class="table table-border">
+                <tr>
+                    <th>Id</th>
+                    <th>exp_duration</th>
+                    <th>exp_position</th>
+                    <th>exp_company</th>
+                    <th>exp_desc</th>
+                    <th>Status</th>
+                </tr>
+                <% for(var i=0;i<experience.length;i++){ %>
+                <tr>
+                    <th><%= i+1 %></th>
+                    <th><%=experience[i].exp_duration%></th>
+                    <th><%=experience[i].exp_position%></th>
+                    <th><%=experience[i].exp_company%></th>
+                    <th><%=experience[i].exp_desc%></th>
+                    <td>
+
+    <a href="/admin/experience_edit/<%= experience[i].eid %>" class="btn btn-warning">
+        <i class="fa fa-pencil"></i>
+    </a>
+
+    <a href="/admin/experience_delete/<%= experience[i].eid %>"
+       class="btn btn-danger"
+       onclick="return confirm('Delete this experience?')">
+        <i class="fa fa-trash"></i>
+    </a>
+
+</td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+
+<%- include('footer.ejs'); %>

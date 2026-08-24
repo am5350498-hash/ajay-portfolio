@@ -1,0 +1,106 @@
+<%- include('header.ejs') %>
+<div class="page-content">
+<div class="container-fluid">
+<div class="page-header">
+<h1 class="h3 mb-1">About Page</h1>
+<p class="text-muted small mb-0">Manage your website About Page</p>
+</div>
+
+<!-- About Tabs -->
+<ul class="nav nav-tabs settings-tabs" id="settingsTabs" role="tablist">
+<li class="nav-item" role="presentation">
+    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#general">
+        <i class="fas fa-about me-2"></i>About Edit
+    </button>
+</li>
+</ul>
+
+<div class="tab-content mt-4">
+<!-- About Edit -->
+<div class="tab-pane1 fade show active" id="general">
+    <div class="card">
+        <div class="card-body">
+            <form action="/admin/about_save" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">Name</label>
+                        <input type="text" name="name" value="<%= about.name %>" class="form-control" />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">Email</label>
+                        <input type="text" name="email" value="<%= about.email %>" class="form-control"  />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">Location</label>
+                        <input type="text" name="location" value="<%= about.location %>" class="form-control" />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">Freelance</label>
+                        <input type="text" name="freelance" value="<%= about.freelance %>" class="form-control" />
+                    </div>
+
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">Position</label>
+                        <input type="text" name="position" value="<%= about.position %>" class="form-control"  />
+                    </div>
+
+                    <div class="col-12 mb-3">
+                        <label class="form-label fw-semibold">Description</label>
+                        <textarea class="form-control" name="expirience_dicription" rows="2"><%= about.expirience_dicription %></textarea>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">Your Years Experience</label>
+                        <input type="text" name="how_year_expirence" value="<%= about.how_year_expirence %>" class="form-control"  />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">How Years Experience</label>
+                        <input type="text" name="your_expirence" value="<%= about.your_expirence %>" class="form-control"  />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">Projects Completed</label>
+                        <input type="text" name="Project_complete" value="<%= about.Project_complete %>" class="form-control"  />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">Happy Clients</label>
+                        <input type="text" name="happy_client" value="<%= about.happy_client %>" class="form-control"  />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">Awards Won</label>
+                        <input type="text" name="Awards_won" value="<%= about.Awards_won %>" class="form-control"  />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">Years Experience</label>
+                        <input type="text" name="year_of_expirence" value="<%= about.year_of_expirence %>" class="form-control"  />
+                    </div>
+
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">Image</label>
+                        <input type="hidden" name="old_photo" value="<%= about.Image %>" class="form-control" />
+                        <input type="file" name="photo" class="form-control">
+                        <img src="/uploads/<%= about.Image %>" height="100" width="100">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save me-2"></i>Save
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<%- include('footer.ejs') %>

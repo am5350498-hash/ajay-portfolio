@@ -1,0 +1,55 @@
+<%- include('header.ejs') %>
+
+<div class="page-content">
+<div class="container-fluid">
+
+<h3 class="mb-4">Portfolio List</h3>
+
+<table class="table table-bordered table-striped">
+
+    <tr>
+        <th>ID</th>
+        <th>Image</th>
+        <th>Project Name</th>
+        <th>Title</th>
+        <th>Action</th>
+    </tr>
+
+    <% for(var i=0;i<portfolio.length;i++){ %>
+
+    <tr>
+
+        <td><%= portfolio[i].id %></td>
+
+        <td>
+            <img src="/uploads/<%= portfolio[i].image %>" width="80" height="80">
+        </td>
+
+        <td><%= portfolio[i].project_name %></td>
+
+        <td><%= portfolio[i].title %></td>
+
+        <td>
+
+            <a href="/admin/portfolio_edit/<%= portfolio[i].id %>" class="btn btn-warning btn-sm">
+                <i class="fa fa-pencil"></i>
+            </a>
+
+            <a href="/admin/portfolio_delete/<%= portfolio[i].id %>"
+               onclick="return confirm('Delete this portfolio?')"
+               class="btn btn-danger btn-sm">
+                <i class="fa fa-trash"></i>
+            </a>
+
+        </td>
+
+    </tr>
+
+    <% } %>
+
+</table>
+
+</div>
+</div>
+
+<%- include('footer.ejs') %>

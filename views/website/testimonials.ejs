@@ -1,0 +1,72 @@
+<%- include('header.ejs'); %>
+
+<section class="testimonials">
+    <div class="container">
+
+        <div class="section-header">
+            <span class="section-tag">Testimonials</span>
+            <h2 class="section-title">What Clients Say</h2>
+        </div>
+
+        <div class="testimonial-slider">
+
+            <div class="testimonial-track" id="testimonialTrack">
+
+                <% for(var i=0; i<testimonial.length; i++){ %>
+
+                <div class="testimonial-card">
+
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+
+                    <p class="testimonial-text">
+                        "<%= testimonial[i].testimonial_description %>"
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <img src="/uploads/<%= testimonial[i].image %>"
+                             alt="<%= testimonial[i].client_name %>">
+
+                        <div class="author-info">
+                            <h4><%= testimonial[i].client_name %></h4>
+                            <span><%= testimonial[i].client_position %></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <% } %>
+
+            </div>
+
+            <div class="slider-controls">
+                <button class="slider-btn" id="prevTestimonial">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="slider-dots" id="testimonialDots">
+                    <% for(var i=0; i<testimonial.length; i++){ %>
+
+                        <span class="dot <%= i==0 ? 'active' : '' %>"></span>
+
+                    <% } %>
+                </div>
+
+                <button class="slider-btn" id="nextTestimonial">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<%- include('footer.ejs'); %>
