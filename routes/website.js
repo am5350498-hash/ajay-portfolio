@@ -4,10 +4,10 @@ var mysql=require('mysql2');
 var util=require('util');
 
 var conn=mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'root',
-    database:'alex_rivera'
+    host:'bxpsavyagjw60qgiboys-mysql.services.clever-cloud.com',
+    user:'uymdxyeububzgbo4',
+    password:'uymdxyeububzgbo4',
+    database:'bxpsavyagjw60qgiboys'
 })
 
 var exe=util.promisify(conn.query).bind(conn);
